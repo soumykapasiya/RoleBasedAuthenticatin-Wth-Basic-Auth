@@ -40,17 +40,17 @@ public class UserService
         list.removeIf(user -> user.getUsername().equals(username));
     }
 
-    public List<User> updateUser(User user)
+    public void updateUser(User user)
     {
         User userData = list.stream().filter(getUser -> getUser.getUsername().equals(user.getUsername())).findFirst().orElse(null);
 
         if(userData == null)
-            return null;
+            return;
 
-        user.setUsername(userData.getUsername());
-        user.setPassword(userData.getPassword());
+        userData.setUsername(user.getUsername());
+        userData.setPassword(user.getPassword());
+        userData.setEmail(user.getEmail());
 
-        return list;
     }
 
 
