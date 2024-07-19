@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class UserController
 {
-
+    String str ="KapasiyaG1";
     private final UserService userService;
 
     @Autowired
